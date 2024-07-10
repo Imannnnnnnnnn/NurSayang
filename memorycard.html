@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Game </title>
+    <link rel="stylesheet" href="style_MMC.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+    <script src="script_MMC.js" defer></script>
+    <style>
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.1); /* Transparent background */
+            padding-top: 20px;
+            transition: background-color 0.5s ease; /* Smooth transition effect */
+            font-family: 'Bubblegum Sans', cursive;
+        }
+
+        .sidebar:hover {
+            background-color: rgba(51, 51, 51, 1); /* Opaque background on hover */
+        }
+
+        .sidebar h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        .sidebar nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar nav ul li {
+            padding: 10px;
+        }
+
+        .sidebar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #555;
+            transform: scale(1.05); /* Increase the scale when hovered */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>MENU</h2>
+        <nav>
+            <ul>
+                  <li><a href="index.html">Home</a></li>
+                <br><h2>GAMES</h2><br>
+                <li><a href="memorycard.html">Memory Card</a></li>
+                <li><a href="Snakes.html">Snakes</a></li>
+                <li><a href="tictactoe.html">Tic Tac Toe</a></li>
+                <li><a href="wheels.html">Snooze or Lose </a></li>
+                <li><a href="guessnum.html">Mid Brain </a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="content">
+        <div class="game">
+            <div class="controls">
+                <button>Start</button>
+                <div class="stats">
+                    <div class="moves">0 moves</div>
+                    <div class="timer">Time: 0 sec</div>
+                </div>
+            </div>
+            <div class="board-container">
+                <div class="board" data-dimension="4"></div>
+                <div class="win">You won!</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

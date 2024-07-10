@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game JavaScript | CodingNepal</title>
+    <link rel="stylesheet" href="style_S.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+
+    <script src="script_S.js" defer></script>
+    <style>
+        .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(51, 51, 51, 0.1); /* Transparent background */
+    padding-top: 20px;
+    transition: background-color 0.5s ease; /* Smooth transition effect */
+    font-family: 'Bubblegum Sans', cursive, sans-serif; /* Fallback to generic cursive and sans-serif fonts */
+}
+
+        }
+
+        .sidebar:hover {
+            background-color: rgba(51, 51, 51, 1); /* Opaque background on hover */
+        }
+
+        .sidebar h2 {
+            color: #fff;
+            text-align: center;
+
+        }
+
+        .sidebar nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar nav ul li {
+            padding: 10px;
+        }
+
+        .sidebar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #555;
+            transform: scale(1.05); /* Increase the scale when hovered */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>MENU</h2>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <br><h2>GAMES</h2><br>
+                <li><a href="memorycard.html">Memory Card</a></li>
+                <li><a href="Snakes.html">Snakes</a></li>
+                <li><a href="tictactoe.html">Tic Tac Toe</a></li>
+                <li><a href="wheels.html">Snooze or Lose </a></li>
+                <li><a href="guessnum.html">Mid Brain</a></li>
+
+
+            </ul>
+        </nav>
+    </div>
+
+    <div class="wrapper">
+        <div class="game-details">
+            <span class="score">Score: 0</span>
+            <span class="high-score">High Score: 0</span>
+        </div>
+        <div class="play-board"></div>
+        <div class="controls">
+            <i data-key="ArrowLeft" class="fa-solid fa-arrow-left-long"></i>
+            <i data-key="ArrowUp" class="fa-solid fa-arrow-up-long"></i>
+            <i data-key="ArrowRight" class="fa-solid fa-arrow-right-long"></i>
+            <i data-key="ArrowDown" class="fa-solid fa-arrow-down-long"></i>
+        </div>
+    </div>
+</body>
+</html>

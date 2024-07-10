@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arcade Guessing Game</title>
+  <link rel="stylesheet" href="style_GN.css">
+   <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap" rel="stylesheet">
+  <style>
+        .sidebar {
+            height: 100%;
+            width: 250px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(51, 51, 51, 0.1); /* Transparent background */
+            padding-top: 20px;
+            transition: background-color 0.5s ease; /* Smooth transition effect */
+            font-family: 'Bubblegum Sans', cursive;
+        }
+
+        .sidebar:hover {
+            background-color: rgba(51, 51, 51, 1); /* Opaque background on hover */
+        }
+
+        .sidebar h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        .sidebar nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar nav ul li {
+            padding: 10px;
+        }
+
+        .sidebar nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+        }
+
+        .sidebar nav ul li a:hover {
+            background-color: #555;
+            transform: scale(1.05); /* Increase the scale when hovered */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+
+
+         <div class="sidebar">
+        <h2>MENU</h2>
+        <nav>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+                <br><h2>GAMES</h2><br>
+                <li><a href="memorycard.html">Memory Card</a></li>
+                <li><a href="Snakes.html">Snakes</a></li>
+                <li><a href="tictactoe.html">Tic Tac Toe</a></li>
+                <li><a href="wheels.html">Snooze or Lose </a></li>
+                <li><a href="guessnum.html">Mid Brain </a></li>
+
+
+            </ul>
+        </nav>
+        </div>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Arcade Guessing Game</h1>
+    <p class="instruction">Guess the number between 1 and 20</p>
+    <input type="number" id="userGuess" placeholder="Enter your guess">
+    <button onclick="checkGuess()">Take a Guess</button>
+    <div id="message"></div>
+    <label for="hardModeSwitch">Hard Mode:</label>
+    <input type="checkbox" id="hardModeSwitch" onchange="toggleHardMode()">
+    <br><br>
+    <label >(awak kena tekan refresh sendiri kalau nak main lagi)</label>
+  </div>
+  
+  <script src="script_GN.js"></script>
+  <script>
+    let hardMode = false;
+
+    function toggleHardMode() {
+      hardMode = document.getElementById('hardModeSwitch').checked;
+      if (hardMode) {
+        showMessage('Hard Mode: ON');
+      } else {
+        showMessage('Hard Mode: OFF');
+      }
+    }
+
+    function restartGame() {
+      // Reload the page to restart the game
+      window.location.reload();
+    }
+
+    document.getElementById('restartBtn').addEventListener('click', restartGame);
+
+    function checkGuess() {
+      // Get the user's guess from the input field
+      const userGuess = parseInt(document.getElementById('userGuess').value);
+
+      // Check if the input is a valid number between 1 and 20
+      if (isNaN(userGuess) || userGuess < 1 || userGuess > 20) {
+          showMessage('Please enter a number between 1 and 20.');
+          return;
+      }
+
+      if (hardMode) {
+        // If hard mode is on, allow only one guess
+        disableInput();
+        if (userGuess === randomNumber) {
+          showMessage('CORRECT! HOW DID YOU PULL THIS OFF?!', 'green');
+        } else {
+          showMessage(`Wrong guess. Correct answer: ${randomNumber}`, 'red');
+        }
+      } else {
+        // If not hard mode, follow the existing logic
+        attempts--;
+        if (userGuess === randomNumber) {
+            showMessage('CORRECT! HOW DID YOU PULL THIS OFF?!', 'green');
+            disableInput();
+        } else {
+            const message = userGuess < randomNumber ? 'Higher!' : 'Lower!';
+            showMessage(message, 'orange');
+
+            if (attempts === 0) {
+                showMessage('TRY AGAIN :(', 'red');
+                disableInput();
+            }
+        }
+      }
+
+      // Clear the input field
+      document.getElementById('userGuess').value = '';
+
+      // Set focus back to the input field
+      document.getElementById('userGuess').focus();
+    }
+  </script>
+</body>
+</html>

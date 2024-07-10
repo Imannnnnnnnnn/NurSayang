@@ -1,0 +1,53 @@
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: #D8F3FF;
+  color: #;
+  margin: 0;
+  padding: 0;
+   font-family: 'Bubblegum Sans', cursive, sans-serif; /* Fallback to generic cursive and sans-serif fonts */
+   background-image: url('cloud.gif');
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  background-color: #D8F3FF;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.instruction {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+input[type="number"] {
+  padding: 10px;
+  width: 100px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3a3;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #4d4;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 18px;
+}
